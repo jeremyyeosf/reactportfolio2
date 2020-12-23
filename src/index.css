@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: steelblue;
 }
 
 code {
@@ -12,3 +13,52 @@ code {
     monospace;
 }
 
+.header {
+  height: 300px;
+  align-self: center;
+  background-image: url('./assets/space-header.png');
+  background-repeat: no-repeat;
+}
+
+.footer {
+  height: 300px;
+  align-self: center;
+  background-image: url('./assets/space-footer.png');
+  background-repeat: no-repeat;
+}
+
+.center {
+  padding: 70px 0;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.centertext {
+  text-align: center;
+}
+
+.imagecenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-heading {
+  color: white;
+  font-size: 40px
+}
+
+.footer-heading {
+  color: white;
+  font-size: 30px
+}
+
+.footer-text {
+  color: white;
+}

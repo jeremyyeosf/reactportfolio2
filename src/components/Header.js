@@ -1,6 +1,4 @@
 import React from 'react'
-import headerImage from '../assets/space-header.png'
-
 
 export default class Header extends React.Component {
 
@@ -12,11 +10,12 @@ export default class Header extends React.Component {
     }
     render() {
         return (
-            <div className="p-grid">
-                    <div className="p-col"><img src={headerImage} alt="not found" className="headerImage"></img></div>
-                    <div className="p-col"></div>
-                    <div className="p-col"></div>
+            <div className="p-grid p-align-center header">
+            <div className="p-col-2 p-offset-1 footer-text centertext">
+                <div className="p-text-bold header-heading">Jeremy Yeo</div>
             </div>
+        </div>
+            
         )
     }
 }

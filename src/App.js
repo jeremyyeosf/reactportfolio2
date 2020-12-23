@@ -31,14 +31,6 @@ export default class App extends React.Component {
                     appLink: "",
                 },
                 {
-                    projectTitle: "Tic Tac Toe",
-                    projectImageUrl: "",
-                    projectSourceCode:
-                        "https://github.com/jeremyyeosf/react-Tictactoe2.git",
-                    appLink: "",
-                },
-
-                {
                     projectTitle: "Simple Calculator",
                     projectImageUrl: CalculatorImage,
                     projectSourceCode:
@@ -56,14 +48,12 @@ export default class App extends React.Component {
                 <AboutPage />
                 {/* <ContactPage /> */}
                 <h1>Projects</h1>
-                <hr></hr>
                 <Project
                     projectTitle={this.state.project[0].projectTitle}
                     projectImageUrl={this.state.project[0].projectImageUrl}
                     projectSourceCode={this.state.project[0].projectSourceCode}
                     appLink={this.state.project[0].appLink}
                 />
-                <br></br>
                 <Project
                     projectTitle={this.state.project[1].projectTitle}
                     projectImageUrl={this.state.project[1].projectImageUrl}
@@ -76,13 +66,6 @@ export default class App extends React.Component {
                     projectSourceCode={this.state.project[2].projectSourceCode}
                     appLink={this.state.project[2].appLink}
                 />
-                <Project
-                    projectTitle={this.state.project[3].projectTitle}
-                    projectImageUrl={this.state.project[3].projectImageUrl}
-                    projectSourceCode={this.state.project[3].projectSourceCode}
-                    appLink={this.state.project[3].appLink}
-                />
-                <br></br>
                 <Footer />
             </div>
         );

@@ -1,17 +1,21 @@
 import React from "react";
-
+import { Button } from 'primereact/button';
 
 export default function Project(props) {
     return (
-        <div>
+        <div className="center">
             <h1>{props.projectTitle}</h1>
-            <img src={props.projectImageUrl} alt="not found" />
+            <img className="imagecenter" src={props.projectImageUrl} alt="not found" />
+            <br></br>
             <a href={props.appLink}>
-                Check it out!
+                <Button label="Check it out!" className="p-button-primary"/>
             </a>
+            &nbsp;&nbsp;
             <a href={props.projectSourceCode}>
-                View Source
+                <Button label="View Source" className="p-button-warning"/>
             </a>
         </div>
     );
 }
+
+

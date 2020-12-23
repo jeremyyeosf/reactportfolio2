@@ -3,6 +3,9 @@ import React from 'react'
 export default function AboutPage() {
     return (
         <div className="p-grid">
+            <div className="p-col-12">
+                <h2>About Me</h2>
+            </div>
             <div className="p-col-3"></div>
             <div className="p-col-6">
             <p>
@@ -22,3 +25,4 @@ export default function AboutPage() {
         </div>
     );
 }
+
