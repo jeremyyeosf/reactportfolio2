@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Footer(props) {
     return (
-        <div className="p-grid p-align-center footer">
+        <div className="p-grid p-align-center footer" id="">
             <div className="p-col-2 p-offset-3 footer-text centertext">
                 <div className="p-text-bold footer-heading">Contact</div>
                 <hr></hr>
@@ -16,7 +16,6 @@ export default function Footer(props) {
                 <a className="p-text-normal link-hover" href="https://www.linkedin.com/in/jeremy-yeo-8a7969145/">LinkedIn</a>
                 <br></br>
                 <a className="p-text-normal link-hover" href="https://github.com/jeremyyeosf"><i className="pi pi-github" style={{'fontSize': '1.5em'}}></i></a>
-                
             </div>
         </div>
     );

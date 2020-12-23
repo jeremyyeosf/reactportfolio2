@@ -20,6 +20,8 @@ code {
   align-self: center;
   background-image: url('./assets/space-header.png');
   background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .footer {
@@ -27,7 +29,7 @@ code {
   align-self: center;
   background-image: url('./assets/space-footer.png');
   background-repeat: no-repeat;
-
+  background-size: cover;
 }
 
 .center {
@@ -113,5 +115,23 @@ a {
   min-height: 600px;
   position: relative;
   bottom: 30px;
+}
 
+#content {
+  min-height: calc(100vh - 300px);
+}
+
+#footer {
+  height: 300px;
+}
+
+.fill {
+  object-fit: fill;}
+
+.contain {
+  object-fit: contain;
+}
+
+.cover {
+  object-fit: cover;
 }

@@ -51,153 +51,85 @@ export default class App extends React.Component {
     render() {
         return (
             <Router>
-                {/* initially used Header component here but unsure how to put <Link> into Header component */}
-                <div className="p-grid p-align-center header">
-                    <div className="p-text-bold header-heading p-col-4 p-offset-1 footer-text centertext">
-                        Jeremy Yeo
+                <div id="content">
+                    {/* initially used Header component here but unsure how to put <Link> into Header component */}
+                    <div className="p-grid p-align-center header">
+                        <div className="p-text-bold header-heading p-col-4 p-offset-1 footer-text centertext">
+                            Jeremy Yeo
+                        </div>
+                        <div className="p-col-4 p-offset-2">
+                            <nav className="p-text-bold link">
+                                <Link className="link-hover" to="/">
+                                    Home
+                                </Link>
+                                &nbsp;<span>|</span>&nbsp;
+                                <Link className="link-hover" to="/about">
+                                    About
+                                </Link>
+                                &nbsp;<span>|</span>&nbsp;
+                                <Link className="link-hover" to="/projects">
+                                    Projects
+                                </Link>
+                            </nav>
+                        </div>
                     </div>
-                    <div className="p-col-4 p-offset-2">
-                        <nav className="p-text-bold link">
-                            <Link className="link-hover" to="/">
-                                Home
-                            </Link>
-                            &nbsp;<span>|</span>&nbsp;
-                            <Link className="link-hover" to="/about">
-                                About
-                            </Link>
-                            &nbsp;<span>|</span>&nbsp;
-                            <Link className="link-hover" to="/projects">
-                                Projects
-                            </Link>
-                        </nav>
-                    </div>
-                </div>
-                <div>
-                    <Switch>
-                        <Route path="/about">
-                            <AboutPage />
-                        </Route>
-                        <Route path="/projects">
-                            <div className="p-grid project-header">
-                                <div className="p-col-3"></div>
-                                <div className="p-col-6 about-text">
-                                    <h2>My Projects</h2>
+                    <div>
+                        <Switch>
+                            <Route path="/about">
+                                <AboutPage />
+                            </Route>
+                            <Route path="/projects">
+                                <div className="p-grid project-header">
+                                    <div className="p-col-3"></div>
+                                    <div className="p-col-6 about-text">
+                                        <h2>My Projects</h2>
+                                    </div>
+                                    <div className="p-col-3"></div>
                                 </div>
-                                <div className="p-col-3"></div>
-                            </div>
-                            <Project
-                                projectTitle={
-                                    this.state.project[0].projectTitle
-                                }
-                                projectImageUrl={
-                                    this.state.project[0].projectImageUrl
-                                }
-                                projectSourceCode={
-                                    this.state.project[0].projectSourceCode
-                                }
-                                appLink={this.state.project[0].appLink}
-                            />
-                            <Project
-                                projectTitle={
-                                    this.state.project[1].projectTitle
-                                }
-                                projectImageUrl={
-                                    this.state.project[1].projectImageUrl
-                                }
-                                projectSourceCode={
-                                    this.state.project[1].projectSourceCode
-                                }
-                            />
-                            <Project
-                                projectTitle={
-                                    this.state.project[2].projectTitle
-                                }
-                                projectImageUrl={
-                                    this.state.project[2].projectImageUrl
-                                }
-                                projectSourceCode={
-                                    this.state.project[2].projectSourceCode
-                                }
-                                appLink={this.state.project[2].appLink}
-                            />
-                        </Route>
-                        <Route path="/">
-                            <IntroPage />
-                        </Route>
-                    </Switch>
+                                <Project
+                                    projectTitle={
+                                        this.state.project[0].projectTitle
+                                    }
+                                    projectImageUrl={
+                                        this.state.project[0].projectImageUrl
+                                    }
+                                    projectSourceCode={
+                                        this.state.project[0].projectSourceCode
+                                    }
+                                    appLink={this.state.project[0].appLink}
+                                />
+                                <Project
+                                    projectTitle={
+                                        this.state.project[1].projectTitle
+                                    }
+                                    projectImageUrl={
+                                        this.state.project[1].projectImageUrl
+                                    }
+                                    projectSourceCode={
+                                        this.state.project[1].projectSourceCode
+                                    }
+                                />
+                                <Project
+                                    projectTitle={
+                                        this.state.project[2].projectTitle
+                                    }
+                                    projectImageUrl={
+                                        this.state.project[2].projectImageUrl
+                                    }
+                                    projectSourceCode={
+                                        this.state.project[2].projectSourceCode
+                                    }
+                                    appLink={this.state.project[2].appLink}
+                                />
+                            </Route>
+                            <Route path="/">
+                                <IntroPage />
+                            </Route>
+                        </Switch>
+                    </div>
                 </div>
                 <Footer />
             </Router>
         );
     }
 }
-
-
-
-// <Router>
-//     <div>
-//         <nav>
-//             <Link to="/">Home</Link>
-//             <Link to="/about">About</Link>
-//             <Link to="/projects">Projects</Link>
-//         </nav>
-
-//         <Switch>
-//             <Route path="/about">
-//                 <AboutPage />
-//             </Route>
-//             <Route path="/projects">
-//             <h1>Projects</h1>
-//                 <Project
-//                     projectTitle={this.state.project[0].projectTitle}
-//                     projectImageUrl={this.state.project[0].projectImageUrl}
-//                     projectSourceCode={this.state.project[0].projectSourceCode}
-//                     appLink={this.state.project[0].appLink}
-//                 />
-//                 <Project
-//                     projectTitle={this.state.project[1].projectTitle}
-//                     projectImageUrl={this.state.project[1].projectImageUrl}
-//                     projectSourceCode={this.state.project[1].projectSourceCode}
-//                     appLink={this.state.project[1].appLink}
-//                 />
-//                 <Project
-//                     projectTitle={this.state.project[2].projectTitle}
-//                     projectImageUrl={this.state.project[2].projectImageUrl}
-//                     projectSourceCode={this.state.project[2].projectSourceCode}
-//                     appLink={this.state.project[2].appLink}
-//                 />
-//             </Route>
-//             <Route path="/">
-//                 <Header />
-//                 <IntroPage />
-//                 <Footer />
-//             </Route>
-//         </Switch>
-//     </div>
-// </Router>;
-
-// <div>
-//     <Header />
-//     <AboutPage />
-//     {/* <ContactPage /> */}
-//     <h1>Projects</h1>
-//     <Project
-//         projectTitle={this.state.project[0].projectTitle}
-//         projectImageUrl={this.state.project[0].projectImageUrl}
-//         projectSourceCode={this.state.project[0].projectSourceCode}
-//         appLink={this.state.project[0].appLink}
-//     />
-//     <Project
-//         projectTitle={this.state.project[1].projectTitle}
-//         projectImageUrl={this.state.project[1].projectImageUrl}
-//         projectSourceCode={this.state.project[1].projectSourceCode}
-//         appLink={this.state.project[1].appLink}
-//     />
-//     <Project
-//         projectTitle={this.state.project[2].projectTitle}
-//         projectImageUrl={this.state.project[2].projectImageUrl}
-//         projectSourceCode={this.state.project[2].projectSourceCode}
-//         appLink={this.state.project[2].appLink}
-//     />
-//     <Footer />
-// </div>
