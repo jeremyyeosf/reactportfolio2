@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Footer(props) {
     return (
         <div className="p-grid p-align-center footer">
@@ -12,9 +13,10 @@ export default function Footer(props) {
             <div className="p-col-2 p-offset-2 footer-text centertext">
                 <div className="p-text-bold footer-heading">Social</div>
                 <hr></hr>
-                <a className="p-text-normal" href="https://www.linkedin.com/in/jeremy-yeo-8a7969145/">LinkedIn</a>
+                <a className="p-text-normal link-hover" href="https://www.linkedin.com/in/jeremy-yeo-8a7969145/">LinkedIn</a>
                 <br></br>
-                <a className="p-text-normal" href="https://github.com/jeremyyeosf">Github</a>
+                <a className="p-text-normal link-hover" href="https://github.com/jeremyyeosf"><i className="pi pi-github" style={{'fontSize': '1.5em'}}></i></a>
+                
             </div>
         </div>
     );

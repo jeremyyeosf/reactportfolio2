@@ -1,14 +1,21 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import "./App.css";
 import AboutPage from "./components/AboutPage";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Project from "./components/Project";
 
 import TypingGameImage from "./assets/typinggame.png";
 import AnimeSearchImage from "./assets/animesearch.png";
 import CalculatorImage from "./assets/calculator.png";
-import ContactPage from "./components/ContactPage";
+// import ContactPage from "./components/ContactPage";
 import Footer from "./components/Footer";
+import IntroPage from "./components/IntroPage";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -35,7 +42,7 @@ export default class App extends React.Component {
                     projectImageUrl: CalculatorImage,
                     projectSourceCode:
                         "https://github.com/jeremyyeosf/JScalculator.git",
-                    appLink: "",
+                    appLink: "https://js-calculator-taupe.vercel.app/",
                 },
             ],
         };
@@ -43,31 +50,154 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <Header />
-                <AboutPage />
-                {/* <ContactPage /> */}
-                <h1>Projects</h1>
-                <Project
-                    projectTitle={this.state.project[0].projectTitle}
-                    projectImageUrl={this.state.project[0].projectImageUrl}
-                    projectSourceCode={this.state.project[0].projectSourceCode}
-                    appLink={this.state.project[0].appLink}
-                />
-                <Project
-                    projectTitle={this.state.project[1].projectTitle}
-                    projectImageUrl={this.state.project[1].projectImageUrl}
-                    projectSourceCode={this.state.project[1].projectSourceCode}
-                    appLink={this.state.project[1].appLink}
-                />
-                <Project
-                    projectTitle={this.state.project[2].projectTitle}
-                    projectImageUrl={this.state.project[2].projectImageUrl}
-                    projectSourceCode={this.state.project[2].projectSourceCode}
-                    appLink={this.state.project[2].appLink}
-                />
+            <Router>
+                {/* initially used Header component here but unsure how to put <Link> into Header component */}
+                <div className="p-grid p-align-center header">
+                    <div className="p-text-bold header-heading p-col-4 p-offset-1 footer-text centertext">
+                        Jeremy Yeo
+                    </div>
+                    <div className="p-col-4 p-offset-2">
+                        <nav className="p-text-bold link">
+                            <Link className="link-hover" to="/">
+                                Home
+                            </Link>
+                            &nbsp;<span>|</span>&nbsp;
+                            <Link className="link-hover" to="/about">
+                                About
+                            </Link>
+                            &nbsp;<span>|</span>&nbsp;
+                            <Link className="link-hover" to="/projects">
+                                Projects
+                            </Link>
+                        </nav>
+                    </div>
+                </div>
+                <div>
+                    <Switch>
+                        <Route path="/about">
+                            <AboutPage />
+                        </Route>
+                        <Route path="/projects">
+                            <div className="p-grid project-header">
+                                <div className="p-col-3"></div>
+                                <div className="p-col-6 about-text">
+                                    <h2>My Projects</h2>
+                                </div>
+                                <div className="p-col-3"></div>
+                            </div>
+                            <Project
+                                projectTitle={
+                                    this.state.project[0].projectTitle
+                                }
+                                projectImageUrl={
+                                    this.state.project[0].projectImageUrl
+                                }
+                                projectSourceCode={
+                                    this.state.project[0].projectSourceCode
+                                }
+                                appLink={this.state.project[0].appLink}
+                            />
+                            <Project
+                                projectTitle={
+                                    this.state.project[1].projectTitle
+                                }
+                                projectImageUrl={
+                                    this.state.project[1].projectImageUrl
+                                }
+                                projectSourceCode={
+                                    this.state.project[1].projectSourceCode
+                                }
+                            />
+                            <Project
+                                projectTitle={
+                                    this.state.project[2].projectTitle
+                                }
+                                projectImageUrl={
+                                    this.state.project[2].projectImageUrl
+                                }
+                                projectSourceCode={
+                                    this.state.project[2].projectSourceCode
+                                }
+                                appLink={this.state.project[2].appLink}
+                            />
+                        </Route>
+                        <Route path="/">
+                            <IntroPage />
+                        </Route>
+                    </Switch>
+                </div>
                 <Footer />
-            </div>
+            </Router>
         );
     }
 }
+
+
+
+// <Router>
+//     <div>
+//         <nav>
+//             <Link to="/">Home</Link>
+//             <Link to="/about">About</Link>
+//             <Link to="/projects">Projects</Link>
+//         </nav>
+
+//         <Switch>
+//             <Route path="/about">
+//                 <AboutPage />
+//             </Route>
+//             <Route path="/projects">
+//             <h1>Projects</h1>
+//                 <Project
+//                     projectTitle={this.state.project[0].projectTitle}
+//                     projectImageUrl={this.state.project[0].projectImageUrl}
+//                     projectSourceCode={this.state.project[0].projectSourceCode}
+//                     appLink={this.state.project[0].appLink}
+//                 />
+//                 <Project
+//                     projectTitle={this.state.project[1].projectTitle}
+//                     projectImageUrl={this.state.project[1].projectImageUrl}
+//                     projectSourceCode={this.state.project[1].projectSourceCode}
+//                     appLink={this.state.project[1].appLink}
+//                 />
+//                 <Project
+//                     projectTitle={this.state.project[2].projectTitle}
+//                     projectImageUrl={this.state.project[2].projectImageUrl}
+//                     projectSourceCode={this.state.project[2].projectSourceCode}
+//                     appLink={this.state.project[2].appLink}
+//                 />
+//             </Route>
+//             <Route path="/">
+//                 <Header />
+//                 <IntroPage />
+//                 <Footer />
+//             </Route>
+//         </Switch>
+//     </div>
+// </Router>;
+
+// <div>
+//     <Header />
+//     <AboutPage />
+//     {/* <ContactPage /> */}
+//     <h1>Projects</h1>
+//     <Project
+//         projectTitle={this.state.project[0].projectTitle}
+//         projectImageUrl={this.state.project[0].projectImageUrl}
+//         projectSourceCode={this.state.project[0].projectSourceCode}
+//         appLink={this.state.project[0].appLink}
+//     />
+//     <Project
+//         projectTitle={this.state.project[1].projectTitle}
+//         projectImageUrl={this.state.project[1].projectImageUrl}
+//         projectSourceCode={this.state.project[1].projectSourceCode}
+//         appLink={this.state.project[1].appLink}
+//     />
+//     <Project
+//         projectTitle={this.state.project[2].projectTitle}
+//         projectImageUrl={this.state.project[2].projectImageUrl}
+//         projectSourceCode={this.state.project[2].projectSourceCode}
+//         appLink={this.state.project[2].appLink}
+//     />
+//     <Footer />
+// </div>

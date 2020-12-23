@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: steelblue;
+  
+  
 }
 
 code {
@@ -25,12 +27,18 @@ code {
   align-self: center;
   background-image: url('./assets/space-footer.png');
   background-repeat: no-repeat;
+
 }
 
 .center {
-  padding: 70px 0;
+  padding: 30px 0;
   border: 1px solid black;
   text-align: center;
+}
+
+.project-title {
+  font-size: xx-large;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .centertext {
@@ -51,7 +59,7 @@ a {
 
 .header-heading {
   color: white;
-  font-size: 40px
+  font-size: 60px
 }
 
 .footer-heading {
@@ -59,6 +67,51 @@ a {
   font-size: 30px
 }
 
+.link {
+  font-size: 30px
+}
+.link-hover:hover {
+  color: skyblue;
+}
+
+.intro-text {
+  font-size: 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about-text {
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .footer-text {
   color: white;
+}
+
+.intro-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  position: relative;
+  bottom: 60px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  position: relative;
+  bottom: 5px;
+}
+
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  position: relative;
+  bottom: 30px;
+
 }

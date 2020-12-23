@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import 'primeflex/primeflex.css';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
+import '../node_modules/primeicons/primeicons.css';
+import '@fortawesome/fontawesome-free/css/all.css'
 
 
 ReactDOM.render(
